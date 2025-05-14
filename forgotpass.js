@@ -4,7 +4,7 @@ document.querySelector('.login-form').addEventListener('submit', async (e) => {
     const email = document.getElementById('username').value;
 
     try {
-        const res = await fetch('http://localhost:3000/api/auth/forgot-password', {
+        const res = await fetch('https://nutrisync-backend.onrender.com/api/auth/forgot-password', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email })

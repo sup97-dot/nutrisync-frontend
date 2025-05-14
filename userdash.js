@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const updateProfileResponse = await fetch(`http://localhost:3000/api/auth/user/${userId}`, {
+            const updateProfileResponse = await fetch(`https://nutrisync-backend.onrender.com/api/auth/user/${userId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.warn('Could not update user profile, but continuing with meal plan generation');
         }
 
-        const response = await fetch(`http://localhost:3000/api/mealplan/generate-weekly-plan?user_id=${userId}`, {
+        const response = await fetch(`https://nutrisync-backend.onrender.com/api/mealplan/generate-weekly-plan?user_id=${userId}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`

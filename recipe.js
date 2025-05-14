@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (starButton) starButton.style.display = 'none';
     } else {
         try {
-            const starRes = await fetch(`http://localhost:3000/api/starred/check/${planId}`, {
+            const starRes = await fetch(`https://nutrisync-backend.onrender.com/api/starred/check/${planId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             starButton.addEventListener('click', async () => {
                 try {
                     const url = isStarred
-                        ?`http://localhost:3000/api/starred/unstar/${planId}`
-                        :`http://localhost:3000/api/starred/star/${planId}`;
+                        ?`https://nutrisync-backend.onrender.com/api/starred/unstar/${planId}`
+                        :`https://nutrisync-backend.onrender.com/api/starred/star/${planId}`;
 
                     const method = isStarred ? 'DELETE' : 'POST';
 
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const res = await fetch(`http://localhost:3000/api/mealplan/recipe/${planId}`);
+        const res = await fetch(`https://nutrisync-backend.onrender.com/api/mealplan/recipe/${planId}`);
         const recipe = await res.json();
 
         if (!res.ok) throw new Error(recipe.message);

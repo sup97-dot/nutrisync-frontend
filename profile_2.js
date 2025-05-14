@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         console.log('Attempting to fetch user data...');
         
-        const userEndpoint = `http://localhost:3000/api/auth/user/${userId}`;
+        const userEndpoint = `https://nutrisync-backend.onrender.com/api/auth/user/${userId}`;
         console.log('Fetching from:', userEndpoint);
 
         const userRes = await fetch(userEndpoint, {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!userRes.ok) {
             console.warn('User endpoint failed, trying profile endpoint...');
 
-            const profileEndpoint = `http://localhost:3000/api/auth/profile/${userId}`;
+            const profileEndpoint = `https://nutrisync-backend.onrender.com/api/auth/profile/${userId}`;
             console.log('Fetching from:', profileEndpoint);
 
             const profileRes = await fetch(profileEndpoint, {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         try {
             console.log('Trying one more approach with /api/auth/progress endpoint...');
-            const progressEndpoint = `http://localhost:3000/api/auth/progress/${userId}`;
+            const progressEndpoint = `https://nutrisync-backend.onrender.com/api/auth/progress/${userId}`;
             
             const progressRes = await fetch(progressEndpoint);
             console.log('Progress response status:', progressRes.status);

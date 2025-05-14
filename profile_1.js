@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const userId = localStorage.getItem('userId');
     try {
-        const response = await fetch(`http://localhost:3000/api/auth/user/${userId}`);
+        const response = await fetch(`https://nutrisync-backend.onrender.com/api/auth/user/${userId}`);
         if (!response.ok) throw new Error('Failed to fetch user data');
         const user = await response.json();
 

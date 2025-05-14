@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/api/starred/user/${userId}`, {
+        const response = await fetch(`https://nutrisync-backend.onrender.com/api/starred/user/${userId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const button = e.target;
                 
                 try {
-                    const res = await fetch(`http://localhost:3000/api/starred/unstar/${planId}`, {
+                    const res = await fetch(`https://nutrisync-backend.onrender.com/api/starred/unstar/${planId}`, {
                         method: 'DELETE',
                         headers: {
                             'Authorization': `Bearer ${token}`

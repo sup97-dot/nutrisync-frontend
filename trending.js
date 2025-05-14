@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!trendingContainer) return;
         
         try {
-            const response = await fetch('http://localhost:3000/api/mealplan/trending');
+            const response = await fetch('https://nutrisync-backend.onrender.com/api/mealplan/trending');
             if (!response.ok) {
                 throw new Error('Failed to fetch trending recipes');
             }

@@ -9,7 +9,7 @@ document.getElementById('guestMealPlanForm').addEventListener('submit', async (e
     const goal = form.goal.value;
 
     try {
-        const response = await fetch('http://localhost:3000/api/mealplan/generate-daily-guest', {
+        const response = await fetch('https://nutrisync-backend.onrender.com/api/mealplan/generate-daily-guest', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ height, weight, age, gender, goal })
